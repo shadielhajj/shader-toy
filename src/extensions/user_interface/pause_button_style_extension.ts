@@ -17,10 +17,7 @@ export class PauseButtonStyleExtension implements WebviewExtension {
 .button-container, .container {
     text-align: center;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    margin: auto;
+    top: 120px;
     z-index: 1;
 }
 

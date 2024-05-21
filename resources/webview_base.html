@@ -14,7 +14,6 @@
             align-items: center;
             text-align: center;
             position: fixed;
-            position: relative;
         }
         
         .error {
@@ -47,7 +46,7 @@
 
         #dat_gui_container {
             position: absolute;
-            left: 0px;   /* position inside relatively positioned parent */
+            right: 0px;   /* position inside relatively positioned parent */
             top: 0px;
             z-index: 3;   /* adjust as needed */
         }
@@ -57,7 +56,7 @@
         .rec_base {
             position: absolute;
             border: none;
-            right: 0px;
+            left: 0px;
             padding: 26px;
             text-align: center;
             text-decoration: none;
@@ -67,8 +66,11 @@
             transform: translateX(0%);
             z-index: 1;
         }
+        .rec_base:nth-of-type(1) {
+            top: 50px;
+        }
         .rec_base:nth-of-type(2) {
-            top: 60px;
+            top: 110px;
         }
         
         /* Screenshot Button Style */
@@ -81,11 +83,9 @@
 <body>
     <div id="message"></div>
     <div id="dat_gui_container"></div>
-    <div id="container">
-        <!-- Pause Element -->
-    </div>
     <!-- Screenshot Element -->
     <!-- Record Element -->
+    <!-- Pause Element -->
     <!-- Reload Element -->
 </body>
 <script src="<!-- JQuery.js -->"></script>
@@ -424,15 +424,21 @@
         }
     }
     function computeSize() {
-        
-        let forcedResolutions = [<!-- Forced Resolution -->];
-        let zoom = forcedResolutions[0] > 0 ? 1.0/window.devicePixelRatio : 1.0;
-        canvas.style.zoom = zoom;
 
         // Compute forced aspect ratio and align canvas
         resolution = forceAspectRatio(window.innerWidth, window.innerHeight);
-        canvas.style.left = `${(window.innerWidth - resolution.x*zoom) / 2}px`;
-        canvas.style.top = `${(window.innerHeight - resolution.y*zoom) / 2}px`;
+
+        let forcedResolutions = [<!-- Forced Resolution -->];
+        if (forcedResolutions[0] > 0 && forcedResolutions[1] > 0) {
+            let zoom = 1.0 / window.devicePixelRatio;
+            canvas.style.zoom = zoom;
+            // canvas.style.left = `${(window.innerWidth - resolution.y*zoom)}px`;
+            canvas.style.left = '100px'
+            canvas.style.top = `${(window.innerHeight - resolution.y*zoom) / 2}px`;
+        } else {
+            canvas.style.left = `${(window.innerWidth - resolution.x) / 2}px`;
+            canvas.style.top = `${(window.innerHeight - resolution.y) / 2}px`;
+        }
 
         for (let buffer of buffers) {
             if (buffer.Target) {

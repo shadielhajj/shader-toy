@@ -7,6 +7,6 @@ export class PauseButtonExtension implements WebviewExtension {
         return `\
 <label class='button-container'>
 <input id='pause-button' type='checkbox'>
-<span class='pause-play'></span>`;
+<span class='pause-play rec_base'></span>`;
     }
 }
