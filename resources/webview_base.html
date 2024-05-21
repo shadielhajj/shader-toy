@@ -49,6 +49,8 @@
             right: 0px;   /* position inside relatively positioned parent */
             top: 0px;
             z-index: 3;   /* adjust as needed */
+            background-color: #0c1f27;
+            height: 100%;
         }
 
         /* Pause Button Style */
@@ -57,20 +59,20 @@
             position: absolute;
             border: none;
             left: 0px;
-            padding: 26px;
+            padding: 20px;
             text-align: center;
             text-decoration: none;
             font-size: 26px;
-            border-radius: 8px;
-            margin: 8px;
+            border-radius: 4px;
+            margin: 4px;
             transform: translateX(0%);
-            z-index: 1;
+            z-index: 2;
         }
         .rec_base:nth-of-type(1) {
-            top: 50px;
+            left: 85px;
         }
         .rec_base:nth-of-type(2) {
-            top: 110px;
+            left: 130px;
         }
         
         /* Screenshot Button Style */
@@ -433,8 +435,8 @@
             let zoom = 1.0 / window.devicePixelRatio;
             canvas.style.zoom = zoom;
             // canvas.style.left = `${(window.innerWidth - resolution.y*zoom)}px`;
-            canvas.style.left = '100px'
-            canvas.style.top = `${(window.innerHeight - resolution.y*zoom) / 2}px`;
+            canvas.style.left = '50px'
+            canvas.style.top = '120px';
         } else {
             canvas.style.left = `${(window.innerWidth - resolution.x) / 2}px`;
             canvas.style.top = `${(window.innerHeight - resolution.y) / 2}px`;

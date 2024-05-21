@@ -15,7 +15,7 @@ export class RecordButtonStyleExtension implements WebviewExtension {
         return `\
 #record {
     background: url('${this.recordResourcePath}');
-    background-size: 32px;
+    background-size: 26px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(128, 128, 128, 0.5);
@@ -26,7 +26,7 @@ export class RecordButtonStyleExtension implements WebviewExtension {
 }
 #record.recording {
     background: url('${this.stopResourcePath}');
-    background-size: 32px;
+    background-size: 26px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(128, 128, 128, 0.5);

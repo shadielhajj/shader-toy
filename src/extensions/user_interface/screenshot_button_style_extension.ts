@@ -13,7 +13,7 @@ export class ScreenshotButtonStyleExtension implements WebviewExtension {
         return `\
 #screenshot {
     background: url('${this.screenResourcePath}');
-    background-size: 32px;
+    background-size: 26px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(128, 128, 128, 0.5);

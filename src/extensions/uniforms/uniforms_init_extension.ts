@@ -22,7 +22,7 @@ export class UniformsInitExtension implements WebviewExtension {
 
         if (has_uniforms) {
             this.content += `
-let dat_gui = new dat.GUI({ autoPlace: false, closed: ${!startingState.Open} });
+let dat_gui = new dat.GUI({ autoPlace: false, closed: false });
 var dat_gui_container = document.getElementById('dat_gui_container');
 dat_gui_container.appendChild(dat_gui.domElement);
 `;

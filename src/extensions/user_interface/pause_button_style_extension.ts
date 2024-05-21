@@ -17,7 +17,8 @@ export class PauseButtonStyleExtension implements WebviewExtension {
 .button-container, .container {
     text-align: center;
     position: absolute;
-    top: 120px;
+    top: 0px;
+    left: 90px;
     z-index: 1;
 }
 
@@ -40,7 +41,7 @@ export class PauseButtonStyleExtension implements WebviewExtension {
     margin: auto;
     transform: translateX(-50%);
     background: url('${this.pauseResourcePath}');
-    background-size: 40px;
+    background-size: 26px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(128, 128, 128, 0.5);
@@ -56,7 +57,7 @@ export class PauseButtonStyleExtension implements WebviewExtension {
 }
 .button-container input:checked ~ .pause-play {
     background: url('${this.playResourcePath}');
-    background-size: 40px;
+    background-size: 26px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(128, 128, 128, 0.5);
